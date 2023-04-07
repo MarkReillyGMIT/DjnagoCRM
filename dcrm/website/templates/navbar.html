@@ -9,18 +9,21 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
+          <!-- If the user is logged in they can see the below links in the Navbar-->
           {% if user.is_authenticated %}
 
           <li class="nav-item">
             <a class="nav-link " href="{% url 'logout' %} ">Logout</a>
           </li>
-          
+          <!--If the user is NOT logged in they will see register or login links in Navbar-->
           {% else %}
           <li class="nav-item">
+            <a class="nav-link " href="{% url 'register' %}">Register</a>
+          </li> 
+          <li class="nav-item">
             <a class="nav-link " href="{% url 'home' %}">Login</a>
-
-          {% endif %}
           </li>
+          {% endif %}
         </ul>
       </div>
     </div>
